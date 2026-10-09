@@ -13,7 +13,9 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_prefix="RECONCILER_")
 
-    base_dir: Path = Path(__file__).resolve().parents[2]
+    # diretório de onde o comando é executado — não o local de instalação do
+    # pacote, que varia entre modo dev (-e .) e instalação "real" (pip install .)
+    base_dir: Path = Path.cwd()
 
     koncili_input_path: Path = Path("data/raw/koncili.xlsx")
     omie_input_path: Path = Path("data/raw/omie.xlsx")
