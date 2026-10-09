@@ -1,0 +1,10 @@
+pandas>=2.2
+openpyxl>=3.1
+xlsxwriter>=3.2
+pandera>=0.20
+pydantic>=2.7
+pydantic-settings>=2.3
+rapidfuzz>=3.9
+loguru>=0.7
+typer>=0.12
+faker>=25.0

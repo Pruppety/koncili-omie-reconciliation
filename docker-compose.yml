@@ -1,0 +1,21 @@
+# Ambiente de demonstração: sobe um Airflow standalone (scheduler + webserver
+# + metadata DB em SQLite, tudo em 1 container) já com a DAG de reconciliação
+# montada. Não é topologia de produção (lá se usaria Postgres + Celery/Kubernetes
+# executor) — aqui o objetivo é rodar com "docker compose up" em qualquer máquina.
+services:
+  airflow:
+    image: apache/airflow:2.9.3-python3.11
+    command: standalone
+    environment:
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__CORE__EXECUTOR: SequentialExecutor
+      PYTHONPATH: /opt/airflow/src
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./src:/opt/airflow/src
+      - ./data:/opt/airflow/data
+      - ./requirements.txt:/requirements.txt
+    entrypoint: >
+      bash -c "pip install --no-cache-dir -r /requirements.txt && airflow standalone"

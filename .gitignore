@@ -1,0 +1,24 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# dados reais nunca devem ir para o repositório
+data/raw/*.xlsx
+data/processed/*.parquet
+data/processed/*.db
+data/output/*.xlsx
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/output/.gitkeep
+
+# Airflow
+airflow/logs/
+airflow/airflow.db
+airflow/airflow.cfg
