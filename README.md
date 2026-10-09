@@ -3,11 +3,10 @@
 Pipeline de dados que extrai, valida, normaliza e concilia lançamentos
 financeiros exportados da **Koncili** (plataforma de conciliação de
 recebíveis/pagamentos) e da **Omie** (ERP), consolidando tudo em um único
-relatório — com rastreabilidade total do que foi casado, do que diverge
+relatório, com rastreabilidade total do que foi casado, do que diverge
 em valor, e do que existe em apenas uma das fontes.
 
-> Projeto desenvolvido como estudo de caso de Engenharia de Dados /
-> Data Science (FIAP), simulando uma rotina real de conciliação financeira
+> Projeto desenvolvido simulando uma rotina real de conciliação financeira
 > com dados **sintéticos** (nenhum dado real de empresa é usado ou necessário).
 
 ## Por que este projeto existe
